@@ -1,0 +1,338 @@
+/* =========================================================
+   PRÁCTICA 0 - HOLA FLASK + JINJA
+   Hoja de estilos
+   ========================================================= */
+
+
+/* =========================================================
+   ESTILOS GENERALES DE LA PÁGINA
+   ========================================================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4f6f8;
+
+    margin: 0;
+
+    padding: 30px;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.contenedor {
+
+    /* Aumentamos el ancho porque ahora tenemos 4 columnas */
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+h1 {
+
+    text-align: center;
+
+    color: #333333;
+}
+
+
+h2 {
+
+    margin-top: 30px;
+
+    color: #444444;
+}
+
+
+h3 {
+
+    margin-top: 0;
+
+    color: #555555;
+}
+
+
+/* =========================================================
+   ETIQUETAS GENERALES
+   ========================================================= */
+
+label {
+
+    font-weight: bold;
+
+    color: #333333;
+}
+
+
+/* =========================================================
+   CAJA DEL NOMBRE
+   ========================================================= */
+
+/*
+   Aplicamos el estilo solamente a los input de tipo text.
+
+   De esta manera NO afectamos a los checkbox.
+*/
+
+input[type="text"] {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ÁREA DE PASATIEMPOS
+   ========================================================= */
+
+.pasatiempos {
+
+    /*
+       CSS Grid permite distribuir las categorías
+       en columnas.
+    */
+
+    display: grid;
+
+    /*
+       Crear cuatro columnas del mismo tamaño.
+    */
+
+    grid-template-columns: repeat(4, 1fr);
+
+    /* Separación entre columnas */
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CADA CATEGORÍA DE PASATIEMPOS
+   ========================================================= */
+
+.categoria {
+
+    background-color: #f8f9fa;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    padding: 18px;
+}
+
+
+/* =========================================================
+   CHECKBOX Y SU TEXTO
+   ========================================================= */
+
+.categoria label {
+
+    /*
+       Cada pasatiempo aparecerá en una línea diferente.
+    */
+
+    display: block;
+
+    /*
+       En los pasatiempos no queremos texto en negritas.
+    */
+
+    font-weight: normal;
+
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+input[type="checkbox"] {
+
+    /*
+       El checkbox conserva su tamaño natural.
+    */
+
+    width: auto;
+
+    margin-right: 7px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ÁREA DE TEXTO: ¿QUÉ ME GUSTA HACER?
+   ========================================================= */
+
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 16px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    /*
+       El usuario puede modificar solamente
+       la altura del textarea.
+    */
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   EFECTO AL SELECCIONAR INPUT O TEXTAREA
+   ========================================================= */
+
+input[type="text"]:focus,
+textarea:focus {
+
+    outline: none;
+
+    border-color: #555555;
+}
+
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+button {
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 14px;
+
+    font-size: 17px;
+
+    background-color: #333333;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+/* Cuando el ratón pasa sobre el botón */
+
+button:hover {
+
+    background-color: #555555;
+}
+
+
+/* =========================================================
+   ENLACE REGRESAR
+   ========================================================= */
+
+a {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    text-decoration: none;
+
+    color: #333333;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   DISEÑO RESPONSIVO
+   ========================================================= */
+
+/*
+   Cuando la pantalla sea menor a 800px,
+   cambiamos de 4 columnas a 2.
+*/
+
+@media (max-width: 800px) {
+
+    .pasatiempos {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/*
+   Cuando la pantalla sea menor a 500px,
+   utilizamos una sola columna.
+*/
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 15px;
+    }
+
+
+    .contenedor {
+
+        padding: 20px;
+    }
+
+
+    .pasatiempos {
+
+        grid-template-columns: 1fr;
+    }
+
+}
